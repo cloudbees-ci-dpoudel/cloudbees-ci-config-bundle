@@ -73,11 +73,11 @@ credentials:
 cloudbees-slack-integration:
   config:
     slackToken: "${slackToken}"
-    slackWorkspace: "T010A455W77"
+    slackWorkspace: "deepakpoudel"
     users:
     - id: "thedeepak75"
       jenkins: "thedeepak75"
       optedIn: true
       scmId: "thedeepak75"
       slack: "dpoudel@outlook.com"
-      slackWorkspace: "T010A455W77"
+      slackWorkspace: "deepakpoudel"
