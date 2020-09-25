@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: 'Jenkins configured using CloudBees CI CasC - v2'
+  systemMessage: 'Jenkins configured using CloudBees CI CasC - v4'
 unclassified:
   hibernationConfiguration:
     activities:
@@ -23,6 +23,9 @@ unclassified:
               credentialsId: "cloudbees-ci-workshop-github-app"
               repoOwner: "cloudbees-ci-dpoudel"
               repository: "pipeline-library"
+notificationConfiguration:
+  enabled: true
+  router: "localOnlyFallback"
 kube:
   podTemplatesConfiguration:
     templates:
@@ -54,8 +57,6 @@ kube:
           memory: false
           mountPath: "/var/maven/"
       yamlMergeStrategy: "override"
-groovy:
-  - url: https://raw.githubusercontent.com/cloudbees-ci-dpoudel/cloudbees-ci-config-bundle/master/groovy/create-pipeline-template-job.groovy
 credentials:
   system:
     domainCredentials:
@@ -72,3 +73,14 @@ credentials:
           id: "cloudbees-ci-workshop-github-app"
           owner: "cloudbees-ci-dpoudel"
           privateKey: "${gitHubAppPrivateKey}"
+cloudbees-slack-integration:
+  config:
+    slackToken: "${slackToken}"
+    slackWorkspace: "T010A455W77"
+    users:
+    - id: "thedeepak75"
+      jenkins: "thedeepak75"
+      optedIn: true
+      scmId: "thedeepak75"
+      slack: "REPLACE_USER_EMAIL"
+      slackWorkspace: "T010A455W77"
